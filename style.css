@@ -1,0 +1,248 @@
+/*
+ * Global styles and variables
+ */
+:root {
+  /* Primary color inspired by the warm sunset tones of Lake Toba */
+  --primary: #f59e0b;
+  /* Dark background for headers and footers */
+  --secondary: #0f172a;
+  /* Neutral text color for readability */
+  --text: #1e293b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text);
+  line-height: 1.6;
+  background-color: #ffffff;
+}
+
+/* Layout container */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Header and navigation */
+.header {
+  background: var(--secondary);
+  color: #ffffff;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.nav a {
+  color: #ffffff;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav a:hover {
+  color: var(--primary);
+}
+
+/* Hero section */
+/* Hero section without external image.
+ * Instead of loading a separate hero image file (hero.png), we use
+ * a subtle gradient background inspired by the dark tones of the
+ * original design. This allows the website to remain fully
+ * self-contained and functional even when the hero image file isn't
+ * uploaded.
+ */
+.hero {
+  /* Gradient from dark secondary tone to slightly lighter shade */
+  background: linear-gradient(135deg, var(--secondary) 0%, #1e293b 100%);
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: #ffffff;
+}
+
+/* Overlay to darken the hero image for better text contrast */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+}
+
+.hero-content {
+  position: relative;
+  max-width: 600px;
+  margin-left: 5%;
+}
+
+.hero-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.hero-content p {
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/* Button styles */
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 30px;
+  margin-right: 10px;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--secondary);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-secondary:hover {
+  background: var(--primary);
+  color: var(--secondary);
+}
+
+/* Section spacing */
+.about,
+.fleet,
+.contact {
+  padding: 80px 0;
+}
+
+/* Section headings */
+.about h3,
+.fleet h3,
+.contact h3 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  color: var(--secondary);
+}
+
+/* Section descriptions */
+.about p,
+.fleet p,
+.contact p {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Fleet grid layout */
+.fleet-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.fleet-item {
+  flex: 1 1 250px;
+  text-align: center;
+  padding: 20px;
+}
+
+.fleet-item i {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.fleet-item h4 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  color: var(--secondary);
+}
+
+.fleet-item p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Contact section list */
+.contact-list {
+  list-style: none;
+  max-width: 400px;
+  margin: 30px auto 0;
+}
+
+.contact-list li {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+}
+
+.contact-list i {
+  color: var(--primary);
+  margin-right: 10px;
+}
+
+.contact-list a {
+  color: var(--secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contact-list a:hover {
+  color: var(--primary);
+}
+
+/* Footer styles */
+.footer {
+  background: var(--secondary);
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  .fleet-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .fleet-item {
+    margin-bottom: 30px;
+  }
+}
